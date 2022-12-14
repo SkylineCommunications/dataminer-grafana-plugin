@@ -53,7 +53,7 @@ For example:
 
 #### Transformations
 
-On some GQI results you might have to add a transformation. For example when having a GQI query that gets the latitude and longitude from element properties, since properties in DataMiner are strings you will need to add a `convert field type` transformation to convert the latitude and longitude values to numbers before you will be able to display it on a map visualization.
+On some GQI results you might have to add a transformation. For example when having a GQI query that gets the latitude and longitude from element properties, since properties in DataMiner are strings you will need to add a `convert field type` transformation to convert the latitude and longitude values to numbers before you will be able to display them on a map visualization.
 
 #### Annotations
 
