@@ -34,12 +34,11 @@ A GQI query should be specified in JSON format. To get this JSON you can make us
 
 #### Time range filter
 
-To apply the time range filter from Grafana, you can manually edit the filter condition of the GQI query by replacing the value with one of the following placeholders: `[gf-starttime]` and `[gf-endtime]`.
+Your GQI query can contain one or more datetime filters. To apply the time range filter from Grafana, you can manually edit the filter condition of the GQI query by replacing the numeric timestamp value with one of the following placeholders: `[gf-starttime]` and `[gf-endtime]`.
 
 For example:
 
 ``` JSON
-...
 {
     "ID": "Value",
     "Value": {
@@ -49,8 +48,7 @@ For example:
     },
     "Type": "datetime",
     "__type": "Skyline.DataMiner.Web.Common.v1.DMAGenericInterfaceQueryChosenOption"
-},
-...
+}
 ```
 
 #### Transformations
