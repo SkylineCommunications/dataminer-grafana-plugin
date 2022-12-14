@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "datasource",
+  "name": "DataMiner",
+  "id": "skylinecommunications-dataminer-datasource",
+  "metrics": true,
+  "annotations": true,
+  "info": {
+    "description": "Connect to a DataMiner agent",
+    "author": {
+      "name": "Skyline Communications",
+      "url": "https://skyline.be"
+    },
+    "keywords": ["dataminer", "skyline", "datasource"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://skyline.be"
+      },
+      {
+        "name": "Community",
+        "url": "https://community.dataminer.services"
+      },
+      {
+        "name": "GitHub",
+        "url": "https://github.com/SkylineCommunications/dataminer-grafana-plugin"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/SkylineCommunications/dataminer-grafana-plugin/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": "^9.2.5",
+    "plugins": []
+  },
+  "routes": [
+    {
+      "path": "API/v1/Json.asmx/ConnectApp",
+      "method": "POST",
+      "body": {
+        "host": "",
+        "login": "{{ .JsonData.dmaUsername }}",
+        "password": "{{ .SecureJsonData.dmaPassword }}",
+        "clientAppName": "Grafana",
+        "clientAppVersion": "1.0.0.0",
+        "clientComputerName": ""
+      }
+    }
+  ]
+}
