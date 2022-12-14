@@ -4,7 +4,7 @@ Connect to a DataMiner agent and visualize your DataMiner data in Grafana. This 
 
 > **⚠️ Alpha version**
 >
-> Everything is subject to change. **No backwards compatibility** is guaranteed. This means that you might have to redo your work once the functionality is effectively released.
+> Everything is subject to change. **No backwards compatibility** is guaranteed. This means that you might have to redo your work once this plugin is effectively released.
 
 ## Getting started
 
