@@ -23,6 +23,7 @@ export const defaultQuery: Partial<DMAQuery> = {
  */
 export interface DMADataSourceOptions extends DataSourceJsonData {
     dmaUsername?: string;
+    dmaUsernameJSON?: string;
 }
 
 /**
@@ -30,6 +31,7 @@ export interface DMADataSourceOptions extends DataSourceJsonData {
  */
 export interface DMASecureJsonData {
     dmaPassword?: string;
+    dmaPasswordJSON?: string;
 }
 
 

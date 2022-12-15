@@ -53,15 +53,15 @@ For example:
 
 #### Transformations
 
-You may have to add a transformation to some GQI results. This could for example be the case when you have a GQI query that gets the latitude and longitude from element properties: since properties in DataMiner are strings, you will need to add a *convert field type* transformation to convert the latitude and longitude values to numbers before you can display them on a map visualization.
+You may have to add a transformation to some GQI results. This could for example be the case when you have a GQI query that gets the latitude and longitude from element properties: since properties in DataMiner are strings, you will need to add a *Convert field type* transformation to convert the latitude and longitude values to numbers before you can display them on a map visualization.
 
 #### Annotations
 
-You can use data from a GQI result to annotate the data on your dashboard. This can be configured in the settings of your Grafana dashboard. For more information about annotations, refer to the Grafana documentation.
+You can use data from a GQI result to annotate the data on your dashboard. This can be configured in the settings of your Grafana dashboard. For more information about annotations, refer to the [Grafana documentation](https://grafana.com/docs/grafana/latest/dashboards/build-dashboards/annotate-visualizations/).
 
 ### Trend data
 
-To get the trend data of a parameter, specify the parameter using the following format: `dmaID/elementID/parameterID` or `dmaID/elementID/tableColumnParameterID/tableRowIndex`.
+To get the trend data of a parameter, specify the parameter using the following format: `dmaID/elementID/parameterID` or `dmaID/elementID/tableColumnParameterID/tableRowIndex`. This will request the trend data from within the time range specified on the dashboard. If the time range is less than 48 hours, 5-minute interval points will be returned, otherwise 60-minute interval points.
 
 > **⚠️ Limited support**
 >

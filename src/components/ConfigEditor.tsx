@@ -10,11 +10,19 @@ interface Props extends DataSourcePluginOptionsEditorProps<DMADataSourceOptions,
 interface State {}
 
 export class ConfigEditor extends PureComponent<Props, State> {
+  formatToJSON = (input: string) => {
+    // special characters like \ need to be escaped before inserting them in the JSON body
+    let result = JSON.stringify(input);
+    result = result.substring(1, result.length - 1);
+    return result;
+  };
+
   onUsernameChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { onOptionsChange, options } = this.props;
     const jsonData = {
       ...options.jsonData,
-      dmaUsername: event.target.value
+      dmaUsername: event.target.value,
+      dmaUsernameJSON: this.formatToJSON(event.target.value)
     };
     onOptionsChange({ ...options, jsonData });
   };
@@ -25,7 +33,8 @@ export class ConfigEditor extends PureComponent<Props, State> {
     onOptionsChange({
       ...options,
       secureJsonData: {
-        dmaPassword: event.target.value
+        dmaPassword: event.target.value,
+        dmaPasswordJSON: this.formatToJSON(event.target.value)
       },
     });
   };
@@ -84,6 +93,8 @@ export class ConfigEditor extends PureComponent<Props, State> {
               defaultUrl="http://localhost"
               dataSourceConfig={options}
               onChange={onOptionsChange}
+              showAccessOptions={false}
+              showForwardOAuthIdentityOption={false}
             />
           </div>
         </div>

@@ -48,8 +48,8 @@
       "method": "POST",
       "body": {
         "host": "",
-        "login": "{{ .JsonData.dmaUsername }}",
-        "password": "{{ .SecureJsonData.dmaPassword }}",
+        "login": "{{ .JsonData.dmaUsernameJSON }}",
+        "password": "{{ .SecureJsonData.dmaPasswordJSON }}",
         "clientAppName": "Grafana",
         "clientAppVersion": "1.0.0.0",
         "clientComputerName": ""
