@@ -1,6 +1,6 @@
 {
   "name": "skylinecommunications-dataminer-grafana-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Connect to a DataMiner agent",
   "scripts": {
     "build": "webpack -c ./.config/webpack/webpack.config.ts --env production",
