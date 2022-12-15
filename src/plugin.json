@@ -34,7 +34,11 @@
         "url": "https://github.com/SkylineCommunications/dataminer-grafana-plugin/blob/master/LICENSE"
       }
     ],
-    "screenshots": [],
+    "screenshots": [
+      { "name": "alarms", "path": "img/screenshot-alarms.png" },
+      { "name": "maps", "path": "img/screenshot-maps.png" },
+      { "name": "trending", "path": "img/screenshot-trending.png" }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
