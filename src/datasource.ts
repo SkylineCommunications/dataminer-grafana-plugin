@@ -79,10 +79,11 @@ export class DataSource extends DataSourceApi<DMAQuery, DMADataSourceOptions> {
     private async _trend(query: DMAQuery, from: number, to: number): Promise<MutableDataFrame> {
 
         const arr = (query.queryText || '').split('/');
-        const dmaId = arr[0];
-        const elementId = arr[1];
-        const parameterId = arr[2];
-        const tableIndex = arr[3];
+        if (arr.length < 3) { throw new Error("Invalid trend request."); }
+        const dmaId = parseInt(arr[0], 10);
+        const elementId = parseInt(arr[1], 10);
+        const parameterId = parseInt(arr[2], 10);
+        const tableIndex = arr.length > 3 ? arr[3] : null;
 
         return this._api.get<DMATrendData>('Json.asmx', 'GetTrendDataForTableParameterV2', {
             dmaID: dmaId,
